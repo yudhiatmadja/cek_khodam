@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid red;
+            background-color: #222;
+            box-shadow: 0 0 10px red;
+        }
+        
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            box-shadow: 0 0 5px red;
+        }
+        
+        button {
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: darkred;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cek Khodam</h1>
+        <p>Masukkan nama Anda untuk melihat nama khodam:</p>
+        <input type="text" id="nameInput" placeholder="Masukkan nama...">
+        <button onclick="checkKhodam()">Cek Khodam</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        const khodamNames = [
+    "Raja Penguasa Malam",
+    "Ratu Kegelapan",
+    "Dewa Bayangan",
+    "Penjaga Gerbang Alam Gaib",
+    "Pemburu Jiwa",
+    "Penguasa Dimensi Lain",
+    "Pelindung Misterius",
+    "Penasihat Roh",
+    "Pengawal Kegelapan",
+    "Penghuni Dunia Bawah",
+    "Raja Zeus",
+    "Panci Terbang",
+    
+
+];
+
+function getRandomKhodamName() {
+    const randomIndex = Math.floor(Math.random() * khodamNames.length);
+    return khodamNames[randomIndex];
+}
+
+function checkKhodam() {
+    const nameInput = document.getElementById('nameInput').value;
+    if (nameInput.trim() === "") {
+        alert("Silakan masukkan nama!");
+        return;
+    }
+    const khodamName = getRandomKhodamName();
+    document.getElementById('result').innerHTML = `Nama Khodam Anda: ${khodamName}`;
+}
+
+    </script>
+</body>
+</html>
